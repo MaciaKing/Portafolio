@@ -7,16 +7,22 @@ const ExperienceSection = () => {
 	type ProjectType = "kaggle" | "github";
 
 	type Experience = {
-		projectTitle: string;
+		projectTitle: {
+			en: string;
+			es: string;
+		};
 		link: string;
 		type: ProjectType;
-		highlights: string;
+		highlights: {
+			en: string;
+			es: string;
+		};
 	};
 
 
-	const experiences = [
+	const experiences: Experience[] = [
 		{
-			projectTitle:{ 
+			projectTitle: {
 				en: 'Dataset publication',
 				es: 'Publicación de un dataset',
 			},
@@ -28,25 +34,25 @@ const ExperienceSection = () => {
 			}
 		},
 		{
-			projectTitle:{ 
+			projectTitle: {
 				en: 'Cybersecurity Data Extraction',
 				es: 'Proyecto de extracción de datos de ciberseguridad'
 			},
 			link: 'https://github.com/MaciaKing/CyberIntelLake',
 			type: 'github',
-			highlights:{
+			highlights: {
 				en: 'A data extraction pipeline built to support the malicious–benign website classification dataset. It follows a raw-silver-gold architecture, automating data collection, cleaning, and enrichment to produce high-quality, analysis-ready cybersecurity data.',
 				es: 'Un canal de extracción de datos creado para respaldar el conjunto de datos de clasificación de sitios web maliciosos y benignos. Sigue una arquitectura raw-silver-gold, automatizando la recopilación, limpieza y enriquecimiento de datos para producir datos de ciberseguridad de alta calidad y listos para su análisis.'
 			}
 		},
 		{
-			projectTitle:{ 
+			projectTitle: {
 				en: 'Chatbot about my resume',
 				es: 'Chatbot sobre mi CV'
 			},
 			link: 'https://github.com/MaciaKing/curriculum-chatbot',
 			type: 'github',
-			highlights:{
+			highlights: {
 				en: 'A personal chatbot built using an intents-based architecture. It includes a custom grid-search mechanism to determine the optimal decision threshold, and relies on a TF-IDF vectorizer combined with an SVC model to classify user queries accurately.',
 				es: 'Un chatbot personal creado utilizando una arquitectura basada en intenciones. Incluye un mecanismo de búsqueda por cuadrícula personalizado para determinar el umbral de decisión óptimo y se basa en un vectorizador TF-IDF combinado con un modelo SVC para clasificar con precisión las consultas de los usuarios.'
 			}
@@ -54,7 +60,7 @@ const ExperienceSection = () => {
 	];
 
 	// Diccionario de iconos dinámicos
-	const icons: Record<ProjectType, JSX.Element> = {
+	const icons: Record<ProjectType, React.ReactNode> = {
 		kaggle: (
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
