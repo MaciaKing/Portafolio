@@ -33,4 +33,4 @@ COPY --from=builder /app/next.config.ts ./next.config.ts
 EXPOSE 3000
 
 # Comando final
-CMD ["npm", "start"]
+CMD ["npm", "start", "--", "-p", "3000", "-H", "0.0.0.0"]
