@@ -1,0 +1,5 @@
+fastapi
+uvicorn
+pillow
+numpy<2
+tflite-runtime
