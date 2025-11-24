@@ -27,7 +27,7 @@ export default function NumbersDetectorPage() {
         const canvas = canvasRef.current!;
         const base64 = canvas.toDataURL("image/png");
 
-        const res = await fetch("http://localhost:8000/predict", {
+        const res = await fetch("http://portfolio_ai:8000/predict", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ image: base64 }),
